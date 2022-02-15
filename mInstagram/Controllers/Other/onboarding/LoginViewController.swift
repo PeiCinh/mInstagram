@@ -30,6 +30,7 @@ class LoginViewController: UIViewController {
     
     private let passwordlField: UITextField = {
         let field = UITextField()
+        field.isSecureTextEntry = true
         field.placeholder = "密碼"
         field.returnKeyType = .continue
         field.leftViewMode = .always
@@ -186,6 +187,7 @@ class LoginViewController: UIViewController {
     }
     
     @objc private func didTapLoginButton(){
+        print("34324")
         passwordlField.resignFirstResponder()
         usernameEmailField.resignFirstResponder()
         
@@ -195,6 +197,25 @@ class LoginViewController: UIViewController {
               }
         
         // login functional
+        var email:String?
+        var username:String?
+        if usernameEmail.contains("@"),usernameEmail.contains("."){
+            //email
+            email = usernameEmail
+        }else{
+            username = usernameEmail
+        }
+        AuthManager.shared.loginUser(username: username, email: email, password: password){ success in
+            DispatchQueue.main.async {
+                if success{
+                    self.dismiss(animated: true,completion: nil)
+                }else{
+                    let alert = UIAlertController(title: "Login Error", message: "We were unable to log you in", preferredStyle: .alert)
+                    alert.addAction(UIAlertAction(title: "Dismiss", style: .cancel, handler: nil))
+                        self.present(alert, animated: true)
+                }
+            }
+        }
     }
     @objc private func didTapTermButton(){
         guard let url = URL(string: "https://help.instagram.com/581066165581870")else{
@@ -212,7 +233,8 @@ class LoginViewController: UIViewController {
     }
     @objc private func didTapCreateAccount(){
         let vc = RegistrationViewController()
-        present(vc, animated: true)
+        vc.title = "建立帳號"
+        present(UINavigationController(rootViewController: vc), animated: true)
     }
     
     /*

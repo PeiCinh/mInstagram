@@ -7,14 +7,37 @@
 
 import FirebaseDatabase
 
-public class DatebaseManager{
-    static let shared = DatebaseManager()
+public class DatabaseManager{
+    static let shared = DatabaseManager()
     
-    public func registerNewUser(username:String, email:String, password:String){
-        
+    private let database = Database.database(url: "https://instagram-bc3cb-default-rtdb.asia-southeast1.firebasedatabase.app").reference()
+    
+    ///Check if username and email is available
+    ///- Parameters
+    ///         - email: String representing email
+    ///         - username: String representing username
+    public func canCreateNewUser(with email:String,username:String,completion:(Bool)->Void){
+        completion(true)
     }
     
-    public func loginUser(username: String?, email:String?,password:String){
-        
+    ///Inserts new user data to database
+    ///- Parameters
+    ///         - email: String representing email
+    ///         - username: String representing username
+    ///         - completion: async callvack for result if database entry succeeded
+    public func inserNewUser(with email:String, username:String,completion: @escaping (Bool)->Void){
+        let key = email.safeDatabaseKey()
+        database.child(key).setValue(["username":username],withCompletionBlock: { error,_ in
+            if error == nil{
+                //succeeded
+                completion(true)
+                return
+            }else{
+                completion(false)
+                return
+            }
+        })
     }
+    
+    //MARK: - Private
 }
