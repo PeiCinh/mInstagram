@@ -4,7 +4,7 @@
 //
 //  Created by Huang YangChing on 2022/2/11.
 //
-
+import SafariServices
 import UIKit
 
 struct SettingCellModel{
@@ -39,13 +39,36 @@ final class SettingViewController: UIViewController {
     }
     
     private func configureModels(){
-        let section = [
-            SettingCellModel(title: "Log out"){ [weak self]in
+        data.append([
+            SettingCellModel(title: "修改個人資料"){ [weak self]in
+                self?.didTapEditProfile()
+            },
+            SettingCellModel(title: "邀請朋友"){ [weak self]in
+                self?.didTapInviteFriend()
+            },
+            SettingCellModel(title: "儲存原始推文"){ [weak self]in
+                self?.didTapSaveOriginPost()
+            },
+        ])
+        
+        data.append([
+            SettingCellModel(title: "Terms of Service"){ [weak self]in
+                self?.openURL(tyep: .terms)
+            },
+            SettingCellModel(title: "Privacy Policy"){ [weak self]in
+                self?.openURL(tyep: .privacy)
+            },
+            SettingCellModel(title: "Help / FeedBack"){ [weak self]in
+                self?.openURL(tyep: .help)
+            }
+        ])
+        
+        data.append([
+            SettingCellModel(title: "登出"){ [weak self]in
                 self?.didTapLogOut()
             
             }
-        ]
-        data.append(section)
+        ])
     }
     
     private func didTapLogOut(){
@@ -74,6 +97,40 @@ final class SettingViewController: UIViewController {
         actionSheet.popoverPresentationController?.sourceRect = tableview.bounds
         present(actionSheet, animated: true)
     }
+    enum SettingsUrlType{
+        case terms, privacy, help
+    }
+    
+    private func openURL(tyep: SettingsUrlType){
+        let urlString : String
+        switch tyep {
+        case .help:urlString = "https://help.instagram.com/"
+        case .privacy:urlString = "https://help.instagram.com/519522125107875/?maybe_redirect_pol=0"
+        case .terms:urlString = "https://help.instagram.com/581066165581870"
+        }
+        
+        guard let url = URL(string: urlString) else{
+            return
+        }
+        
+        let vc = SFSafariViewController(url: url)
+        present(vc, animated: true)
+    }
+    
+    private func didTapEditProfile(){
+        let vc = EditProfileViewController()
+        vc.title = "編輯個人資料"
+        let navVC = UINavigationController(rootViewController: vc)
+        present(navVC,animated: true)
+    }
+    
+    private func didTapInviteFriend(){
+        
+    }
+    
+    private func didTapSaveOriginPost(){
+        
+    }
 
 }
 
@@ -89,6 +146,7 @@ extension SettingViewController: UITableViewDelegate, UITableViewDataSource{
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "cell",for: indexPath)
         cell.textLabel?.text = data[indexPath.section][indexPath.row].title
+        cell.accessoryType = .disclosureIndicator
         return cell
     }
     

@@ -51,6 +51,14 @@
 		B95CA1DC27B6636200A37207 /* AuthManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = B95CA1DB27B6636200A37207 /* AuthManager.swift */; };
 		B95CA1DE27B663CD00A37207 /* StorageManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = B95CA1DD27B663CD00A37207 /* StorageManager.swift */; };
 		B95CA1E027B9F53D00A37207 /* Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = B95CA1DF27B9F53D00A37207 /* Extensions.swift */; };
+		B977E4CC27BBE85F004762DF /* IGFeedPostTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = B977E4CB27BBE85F004762DF /* IGFeedPostTableViewCell.swift */; };
+		B977E4CD27BBE862004762DF /* IGFeedPostTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = B977E4CB27BBE85F004762DF /* IGFeedPostTableViewCell.swift */; };
+		B977E4D027BBED58004762DF /* IGFeedPostHeaderTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = B977E4CF27BBED58004762DF /* IGFeedPostHeaderTableViewCell.swift */; };
+		B977E4D127BBED58004762DF /* IGFeedPostHeaderTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = B977E4CF27BBED58004762DF /* IGFeedPostHeaderTableViewCell.swift */; };
+		B977E4D327BBED8F004762DF /* IGFeedPostActionsTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = B977E4D227BBED8F004762DF /* IGFeedPostActionsTableViewCell.swift */; };
+		B977E4D427BBED8F004762DF /* IGFeedPostActionsTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = B977E4D227BBED8F004762DF /* IGFeedPostActionsTableViewCell.swift */; };
+		B977E4D627BBEDCA004762DF /* IGFeedPostGeneralTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = B977E4D527BBEDCA004762DF /* IGFeedPostGeneralTableViewCell.swift */; };
+		B977E4D727BBEDCA004762DF /* IGFeedPostGeneralTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = B977E4D527BBEDCA004762DF /* IGFeedPostGeneralTableViewCell.swift */; };
 		E998B4942441DE214D287F32 /* Pods_mInstagramTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F6FC4D29F20FF95B77C9492F /* Pods_mInstagramTests.framework */; };
 /* End PBXBuildFile section */
 
@@ -110,6 +118,10 @@
 		B95CA1DB27B6636200A37207 /* AuthManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthManager.swift; sourceTree = "<group>"; };
 		B95CA1DD27B663CD00A37207 /* StorageManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StorageManager.swift; sourceTree = "<group>"; };
 		B95CA1DF27B9F53D00A37207 /* Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Extensions.swift; sourceTree = "<group>"; };
+		B977E4CB27BBE85F004762DF /* IGFeedPostTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IGFeedPostTableViewCell.swift; sourceTree = "<group>"; };
+		B977E4CF27BBED58004762DF /* IGFeedPostHeaderTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IGFeedPostHeaderTableViewCell.swift; sourceTree = "<group>"; };
+		B977E4D227BBED8F004762DF /* IGFeedPostActionsTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IGFeedPostActionsTableViewCell.swift; sourceTree = "<group>"; };
+		B977E4D527BBEDCA004762DF /* IGFeedPostGeneralTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IGFeedPostGeneralTableViewCell.swift; sourceTree = "<group>"; };
 		C2CEB333497AA7A54C987D1B /* Pods-mInstagram.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-mInstagram.release.xcconfig"; path = "Target Support Files/Pods-mInstagram/Pods-mInstagram.release.xcconfig"; sourceTree = "<group>"; };
 		E1852176A987ECEB4E23F24D /* Pods-mInstagram-mInstagramUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-mInstagram-mInstagramUITests.release.xcconfig"; path = "Target Support Files/Pods-mInstagram-mInstagramUITests/Pods-mInstagram-mInstagramUITests.release.xcconfig"; sourceTree = "<group>"; };
 		F6FC4D29F20FF95B77C9492F /* Pods_mInstagramTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_mInstagramTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -220,6 +232,7 @@
 		B95CA1A427B6394400A37207 /* View */ = {
 			isa = PBXGroup;
 			children = (
+				B977E4CA27BBE82E004762DF /* Cells */,
 				B95CA17D27B638B300A37207 /* Assets.xcassets */,
 				B95CA1AA27B6399500A37207 /* Storyboards */,
 			);
@@ -308,6 +321,25 @@
 				B95CA1D327B63C3D00A37207 /* PublishPostViewController.swift */,
 			);
 			path = General;
+			sourceTree = "<group>";
+		};
+		B977E4CA27BBE82E004762DF /* Cells */ = {
+			isa = PBXGroup;
+			children = (
+				B977E4CE27BBEC5E004762DF /* Home Feed */,
+			);
+			path = Cells;
+			sourceTree = "<group>";
+		};
+		B977E4CE27BBEC5E004762DF /* Home Feed */ = {
+			isa = PBXGroup;
+			children = (
+				B977E4CB27BBE85F004762DF /* IGFeedPostTableViewCell.swift */,
+				B977E4CF27BBED58004762DF /* IGFeedPostHeaderTableViewCell.swift */,
+				B977E4D227BBED8F004762DF /* IGFeedPostActionsTableViewCell.swift */,
+				B977E4D527BBEDCA004762DF /* IGFeedPostGeneralTableViewCell.swift */,
+			);
+			path = "Home Feed";
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -556,19 +588,23 @@
 				B95CA1AF27B639FC00A37207 /* CameraViewController.swift in Sources */,
 				B95CA17927B638B200A37207 /* HomeViewController.swift in Sources */,
 				B95CA1BC27B63B7000A37207 /* RegistrationViewController.swift in Sources */,
+				B977E4D027BBED58004762DF /* IGFeedPostHeaderTableViewCell.swift in Sources */,
 				B95CA1D127B63C2000A37207 /* PostEditorViewController.swift in Sources */,
 				B95CA1DE27B663CD00A37207 /* StorageManager.swift in Sources */,
 				B95CA1BF27B63BA600A37207 /* PostViewController.swift in Sources */,
 				B95CA1DA27B662BD00A37207 /* DatabaseManager.swift in Sources */,
 				B95CA1B227B63A1100A37207 /* NotificationsViewController.swift in Sources */,
+				B977E4CC27BBE85F004762DF /* IGFeedPostTableViewCell.swift in Sources */,
 				B95CA1CE27B63BFF00A37207 /* SearchResultViewController.swift in Sources */,
 				B95CA1B927B63B4800A37207 /* LoginViewController.swift in Sources */,
 				B95CA1E027B9F53D00A37207 /* Extensions.swift in Sources */,
+				B977E4D627BBEDCA004762DF /* IGFeedPostGeneralTableViewCell.swift in Sources */,
 				B95CA1CB27B63BE800A37207 /* SearchViewController.swift in Sources */,
 				B95CA1B527B63A2000A37207 /* ProfileViewController.swift in Sources */,
 				B95CA1DC27B6636200A37207 /* AuthManager.swift in Sources */,
 				B95CA17527B638B200A37207 /* AppDelegate.swift in Sources */,
 				B95CA17727B638B200A37207 /* SceneDelegate.swift in Sources */,
+				B977E4D327BBED8F004762DF /* IGFeedPostActionsTableViewCell.swift in Sources */,
 				B95CA1C827B63BDB00A37207 /* ListViewController.swift in Sources */,
 				B95CA1C527B63BCB00A37207 /* SettingViewController.swift in Sources */,
 			);
@@ -592,15 +628,19 @@
 				B95CA1BA27B63B4800A37207 /* LoginViewController.swift in Sources */,
 				B95CA1B627B63A2000A37207 /* ProfileViewController.swift in Sources */,
 				B95CA1BD27B63B7000A37207 /* RegistrationViewController.swift in Sources */,
+				B977E4D727BBEDCA004762DF /* IGFeedPostGeneralTableViewCell.swift in Sources */,
 				B95CA1D527B63C3D00A37207 /* PublishPostViewController.swift in Sources */,
 				B95CA1B327B63A1100A37207 /* NotificationsViewController.swift in Sources */,
+				B977E4CD27BBE862004762DF /* IGFeedPostTableViewCell.swift in Sources */,
 				B95CA19627B638B400A37207 /* mInstagramUITests.swift in Sources */,
+				B977E4D427BBED8F004762DF /* IGFeedPostActionsTableViewCell.swift in Sources */,
 				B95CA1CF27B63BFF00A37207 /* SearchResultViewController.swift in Sources */,
 				B95CA1CC27B63BE800A37207 /* SearchViewController.swift in Sources */,
 				B95CA1B027B639FC00A37207 /* CameraViewController.swift in Sources */,
 				B95CA1D227B63C2000A37207 /* PostEditorViewController.swift in Sources */,
 				B95CA19827B638B400A37207 /* mInstagramUITestsLaunchTests.swift in Sources */,
 				B95CA1C327B63BC100A37207 /* EditProfileViewController.swift in Sources */,
+				B977E4D127BBED58004762DF /* IGFeedPostHeaderTableViewCell.swift in Sources */,
 				B95CA1AD27B639E900A37207 /* ExploreViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
