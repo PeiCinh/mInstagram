@@ -121,6 +121,7 @@ final class SettingViewController: UIViewController {
         let vc = EditProfileViewController()
         vc.title = "編輯個人資料"
         let navVC = UINavigationController(rootViewController: vc)
+        navVC.modalPresentationStyle = .fullScreen
         present(navVC,animated: true)
     }
     
