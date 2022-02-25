@@ -7,6 +7,7 @@ target 'mInstagram' do
 
   # Pods for mInstagram
   pod 'Appirater'
+  pod 'SDWebImage'
 
   pod 'Firebase/Core'
   pod 'Firebase/Auth'
